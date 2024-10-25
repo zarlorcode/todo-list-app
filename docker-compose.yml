@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  todo-app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: todo_db
+
+  db:
+    image: postgres:alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: todo_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Aquí se define el volumen para la persistencia
+volumes:
+  pgdata: {}  # Declaramos el volumen vacío para que Docker lo maneje
+
+
