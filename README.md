@@ -32,7 +32,7 @@ Método: POST
 URL: /todos
 Ejemplo de uso: 
     ```bash
-    curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"id": "3", "title": "Third Task", "status": "pending"}'
+    curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"id": "1", "title": "First Task", "status": "pending"}'
 
 3. Obtener todas las tareas
 Método: GET
@@ -46,14 +46,14 @@ Método: PUT
 URL: /todos/:id (reemplaza :id con el ID de la tarea que deseas actualizar)
 Ejemplo de uso: 
     ```bash
-    curl -X PUT http://localhost:8080/todos/3 -H "Content-Type: application/json" -d '{"title": "Tarea 3 actualizada", "status": "completed"}'
+    curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title": "First Task actualizada", "status": "completed"}'
 
 5. Eliminar una tarea
 Método: DELETE
 URL: /todos/:id (reemplaza :id con el ID de la tarea que deseas eliminar)
 Ejemplo de uso: 
     ```bash
-    curl -X DELETE http://localhost:8080/todos/3
+    curl -X DELETE http://localhost:8080/todos/1
     
 6. Parar la ejecución:
     ```bash
