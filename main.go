@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+    "time"
 
 	"github.com/gin-gonic/gin"
     "github.com/joho/godotenv"
@@ -22,13 +23,13 @@ var db *gorm.DB
 
 // Inicializar la base de datos
 func initDB() {
-	var err error
+    
+    var err error
 
 	// Cargar variables de entorno desde .env
 	if err := godotenv.Load(); err != nil {
 		log.Println("No se pudo cargar el archivo .env, usando variables de entorno del sistema")
 	}
-
 	// Obtener las variables de entorno
 	host := os.Getenv("DB_HOST")
 	port := os.Getenv("DB_PORT")
@@ -38,9 +39,15 @@ func initDB() {
 
 	// Construir la cadena de conexión
 	dsn := "host=" + host + " user=" + user + " password=" + password + " dbname=" + dbname + " port=" + port + " sslmode=disable"
-	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		log.Fatalf("No se pudo conectar a la base de datos: %v", err)
+    
+    for {
+		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
+		if err == nil {
+			log.Println("Conectado exitosamente a la base de datos")
+			break
+		}
+		log.Println("Conexión fallida, reintentando en 1 segundo...")
+		time.Sleep(1 * time.Second)
 	}
 	// Migrar la estructura de la tabla
 	db.AutoMigrate(&ToDo{})

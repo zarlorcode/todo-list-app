@@ -16,11 +16,6 @@ FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /to-do-app .
 COPY ./.env .
-
-# Descargar wait-for-it
-RUN apk add --no-cache bash curl && \
-    curl -o /wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh && \
-    chmod +x /wait-for-it.sh
     
 EXPOSE 8080
 
