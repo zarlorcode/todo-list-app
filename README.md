@@ -25,9 +25,11 @@ La aplicación es útil para explorar conceptos básicos de desarrollo de APIs, 
 - **Docker Compose**: Asegúrate de tener Docker Compose instalado, que normalmente viene junto con Docker Desktop.
 
 ## Uso
-1. Lanzar a ejecución
+1. Lanzar a ejecución:
     ```bash
     docker-compose up --build
+    
+A partir de ahora podemos realizar todas las operaciones, crear una nueva tarea, actualizar una tarea, ver la lista de tareas y borrar una tarea. Todo ello se puede hacer desde otra terminal(diferente a la del docker-compose up --build). Prueba a ejecutar los siguientes comandos:
     
 2. Crear una nueva tarea
 Método: POST
@@ -57,7 +59,7 @@ Ejemplo de uso:
     ```bash
     curl -X DELETE http://localhost:8080/todos/3
     
-6. Parar la ejecución
+6. Parar la ejecución:
     ```bash
     docker-compose down
 
