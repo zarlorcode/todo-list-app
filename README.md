@@ -25,28 +25,39 @@ La aplicación es útil para explorar conceptos básicos de desarrollo de APIs, 
 - **Docker Compose**: Asegúrate de tener Docker Compose instalado, que normalmente viene junto con Docker Desktop.
 
 ## Uso
-1. Crear una nueva tarea
+1. Lanzar a ejecucion
+    ```bash
+    docker-compose up --build
+2. Crear una nueva tarea
 Método: POST
 URL: /todos
 Ejemplo de uso: 
     ```bash
-    curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"id": "2", "title": "Nueva tarea", "status": "pending"}'
+    curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"id": "3", "title": "Third Task", "status": "pending"}'
 
-2. Obtener todas las tareas
+3. Obtener todas las tareas
 Método: GET
 URL: /todos
-Ejemplo de uso: curl -X GET http://localhost:8080/todos
+Ejemplo de uso: 
+    ```bash
+    curl -X GET http://localhost:8080/todos
 
-3. Actualizar una tarea existente
+4. Actualizar una tarea existente
 Método: PUT
 URL: /todos/:id (reemplaza :id con el ID de la tarea que deseas actualizar)
-Ejemplo de uso: curl -X PUT http://localhost:8080/todos/2 -H "Content-Type: application/json" -d '{"title": "Tarea actualizada", "status": "completed"}'
+Ejemplo de uso: 
+    ```bash
+    curl -X PUT http://localhost:8080/todos/3 -H "Content-Type: application/json" -d '{"title": "Tarea 3 actualizada", "status": "completed"}'
 
-4. Eliminar una tarea
+5. Eliminar una tarea
 Método: DELETE
 URL: /todos/:id (reemplaza :id con el ID de la tarea que deseas eliminar)
-Ejemplo de uso: curl -X DELETE http://localhost:8080/todos/2
-
+Ejemplo de uso: 
+    ```bash
+    curl -X DELETE http://localhost:8080/todos/3
+6. Parar la ejecucion
+    ```bash
+    docker-compose down
 
 ## Instalación
 
