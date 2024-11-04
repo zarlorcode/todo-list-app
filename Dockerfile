@@ -6,8 +6,6 @@ WORKDIR /app
 COPY go.mod ./
 COPY go.sum ./
 RUN go mod download 
-RUN go get gorm.io/driver/postgres 
-RUN go get gorm.io/gorm
 COPY . .
 
 # Construir la aplicación
@@ -17,6 +15,7 @@ RUN go build -o /to-do-app
 FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /to-do-app .
+COPY ./.env .
 EXPOSE 8080
 
 # Ejecutar la aplicación
