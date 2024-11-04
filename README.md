@@ -6,7 +6,7 @@ Este proyecto es una aplicación web de To-Do List (lista de tareas) construida 
 - [Descripción](#descripción)
 - [Requisitos Previos](#requisitos-previos)
 - [Uso](#uso)
-- [Descripción de componentes](#descripción de componentes)
+- [Descripción de componentes](#descripción-de-componentes)
 
 ## Descripción
 Este proyecto implementa una API REST que permite:
