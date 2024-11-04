@@ -71,15 +71,19 @@ El Dockerfile es un archivo de configuración que define cómo se debe construir
 Este archivo de configuración es utilizado por Docker Compose para definir y orquestar múltiples contenedores que componen la aplicación. En este caso, define un servicio para la aplicación Go y otro para una base de datos PostgreSQL, especificando las dependencias, puertos expuestos y variables de entorno necesarias para el funcionamiento de ambos contenedores, lo que simplifica su despliegue y gestión.
 
 **main.go:** 
+
 Este archivo contiene el código fuente principal de la aplicación, escrito en Go. Utiliza el framework Gin para crear un servidor web que maneja las solicitudes HTTP y proporciona una API RESTful para realizar operaciones CRUD en una lista de tareas. También incluye la lógica para conectar y migrar la base de datos PostgreSQL, gestionando las interacciones entre la API y la base de datos.
 
 **.env:**
+
 El archivo .env es utilizado para almacenar variables de entorno que configuran la aplicación y el contenedor de la base de datos. Contiene información sensible, como el nombre de usuario, la contraseña y el nombre de la base de datos, que son utilizados por la aplicación Go para establecer la conexión con PostgreSQL, permitiendo que la configuración sea fácilmente ajustable sin modificar el código fuente.
 
 **go.mod:** 
+
 Este archivo es utilizado por el sistema de gestión de módulos de Go para definir las dependencias del proyecto. Especifica el módulo del proyecto y las versiones de las bibliotecas requeridas, asegurando que el entorno de desarrollo tenga acceso a las versiones correctas de las dependencias utilizadas en el código.
 
 **go.sum:** 
+
 El archivo go.sum complementa al go.mod al registrar las versiones exactas de las dependencias y sus hash de verificación. Esto garantiza la integridad y consistencia del entorno de desarrollo y producción, permitiendo que otros desarrolladores y sistemas recuperen las mismas versiones de las bibliotecas, evitando problemas de compatibilidad.
 
 
