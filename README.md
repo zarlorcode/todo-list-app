@@ -59,11 +59,6 @@ Ejemplo de uso:
     ```bash
     docker-compose down
 
-## Instalación
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tu_usuario/tu_repositorio.git
-   cd tu_repositorio
    
 
