@@ -28,7 +28,9 @@ La aplicación es útil para explorar conceptos básicos de desarrollo de APIs, 
 1. Crear una nueva tarea
 Método: POST
 URL: /todos
-Ejemplo de uso: curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"id": "2", "title": "Nueva tarea", "status": "pending"}'
+Ejemplo de uso: 
+    ```bash
+    curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"id": "2", "title": "Nueva tarea", "status": "pending"}'
 
 2. Obtener todas las tareas
 Método: GET
